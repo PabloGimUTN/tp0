@@ -30,13 +30,14 @@ int main(void)
 	
 	if(config == NULL){
 		abort();
-	}
-	else{
+	}else{
+
 		printf("este es el valor de config:%d\n",config);
 		ip = config_get_string_value(config	,"IP");
 		puerto = config_get_string_value(config	,"PUERTO");
 		valor = config_get_string_value(config	,"CLAVE");
 	}
+	
 
 
 	// Loggeamos el valor de config
@@ -81,7 +82,7 @@ LOG_LEVEL_INFO
 
 t_config* iniciar_config(void)
 {
-	t_config* nuevo_config = config_create("cliente.config");
+	t_config* nuevo_config = config_create("/home/utnso/tp0/client/cliente.config");
 
 
 	return nuevo_config;
